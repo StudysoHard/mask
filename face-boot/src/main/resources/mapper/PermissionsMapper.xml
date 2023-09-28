@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyongqiang.zyz.mapper.PermissionsMapper">
+
+    <resultMap id="BaseResultMap" type="com.heyongqiang.zyz.po.Permissions">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="permissions_name" column="permissions_name" jdbcType="VARCHAR"/>
+            <result property="circle_radius" column="circle_radius" jdbcType="INTEGER"/>
+            <result property="level" column="level" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,permissions_name,circle_radius,
+        level
+    </sql>
+</mapper>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyongqiang.zyz.mapper.XunjianMapper">
+
+    <resultMap id="BaseResultMap" type="com.heyongqiang.zyz.po.Xunjian">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="latitude" column="latitude" jdbcType="VARCHAR"/>
+            <result property="longitude" column="longitude" jdbcType="VARCHAR"/>
+            <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="finalTime" column="final_time" jdbcType="TIMESTAMP"/>
+            <result property="nomaskNumber" column="nomask_number" jdbcType="INTEGER"/>
+            <result property="maskNumber" column="mask_number" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,latitude,longitude,
+        user_id,create_time,final_time,
+        nomask_number,mask_number
+    </sql>
+
+    <update id="updateFinalTimeById">
+        update weixing_xunjian
+        set final_time = #{date} ,
+        nomask_number = #{noMask},
+        mask_number = #{mask}
+        where id = #{xunJianId}
+    </update>
+
+
+    <select id="searchPreErrorLogout" resultType="long">
+        SELECT id from weixing_xunjian
+				where user_id = 1
+			and final_time is null
+    </select>
+
+    <select id="searchRecentBeginTime" resultType="java.util.Date">
+        SELECT create_time from weixing_xunjian
+        where final_time is null
+    </select>
+
+</mapper>

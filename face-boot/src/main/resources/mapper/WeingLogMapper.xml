@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyongqiang.zyz.mapper.WeingLogMapper">
+
+    <resultMap id="BaseResultMap" type="com.heyongqiang.zyz.po.WeingLog">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="request_params" column="request_params" jdbcType="VARCHAR"/>
+            <result property="respone_message" column="respone_message" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="BOOLEAN"/>
+            <result property="mode" column="mode" jdbcType="TINYINT"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,request_params,respone_message,
+        status,mode,create_time
+    </sql>
+</mapper>

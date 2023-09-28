@@ -1,0 +1,12 @@
+/* {{page}}.wxss */
+.camera-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80rpx;
+  margin-bottom: 50rpx;
+}
+.img_txt {
+  color: red;
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis配置文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyongqiang.zyz.mapper.ImgMapper">
+
+    <insert id="insertMaskImg" useGeneratedKeys="true" keyProperty="id">
+        insert into weixing_maskimg
+        (
+            id,
+            longitude,
+            latitude,
+            user_name,
+            catch_time,
+            is_delete
+        )
+        values (
+            #{maskImage.id,jdbcType=BIGINT},
+            #{maskImage.longitude},
+            #{maskImage.latitude},
+            #{maskImage.userName},
+            #{maskImage.catchTime},
+            #{maskImage.isDelete}
+        )
+    </insert>
+
+    <select id="selectImgByDate" resultType="java.lang.String">
+        select img_path from weixing_maskimg
+        where catchTime > #{beginData}
+        and userName = #{userName}
+    </select>
+
+    <select id="selectPreImgPathById" resultType="java.lang.String">
+        select img_path from weixing_maskimg
+        where id = #{id}
+    </select>
+
+    <select id="updateImgPathById" resultType="int">
+        update weixing_maskimg
+        set img_path=#{path.imgpath}
+        where id = #{path.id}
+    </select>
+
+    <select id="peopleCatchCounts" resultType="com.heyongqiang.zyz.common.dto.TopCameraCountsDto">
+        select count(*) as counts , camera_id as id
+				from weixing_maskimg
+        where user_id = #{id}
+        and is_camera = 0
+        and camera_id is not null
+        group by camera_id
+				ORDER BY counts desc
+		limit 5
+    </select>
+
+    <select id="searchPreLogOutPeopleNumber" resultType="com.heyongqiang.zyz.common.dto.XunJianPeopleDto">
+        SELECT SUM(mask_number) as mskPeople , SUM(nomask_number) as noMaskPeople
+        from weixing_maskimg
+        where catch_time > #{beginTime}
+        and user_id = #{id}
+    </select>
+
+    <select id="xunJianCatchCounts" resultType="com.heyongqiang.zyz.common.dto.TopXunJainCountsDto">
+        select count(1) as counts, xunjian_id, min(catch_time) as catchTime from weixing_maskimg
+        where user_id = #{id}
+        group by xunjian_id
+        order by catchTime
+        limit 5
+    </select>
+
+    <select id="userTopCount" resultType="com.heyongqiang.zyz.common.dto.TopCameraCountsDto">
+    select count(1) as counts,user_id as id from weixing_maskimg
+    group by user_id
+    </select>
+
+    <select id="selectCountsByXunJianId" resultType="com.heyongqiang.zyz.common.dto.XunJianGroupByDto">
+    select sum(mask_number) as nomaks , sum(nomask_number) as mask
+    from weixing_maskimg
+    where xunjian_id = 1
+    group by xunjian_id
+    </select>
+
+    <select id="selectImgByUserId" resultType="com.heyongqiang.zyz.common.dto.ImgPathQueryDto">
+    select img_path as imgPath ,catch_time as times from weixing_maskimg
+    where user_id = #{id}
+    and img_path is not null
+    </select>
+</mapper>

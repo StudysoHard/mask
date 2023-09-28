@@ -1,0 +1,18 @@
+<!--{{page}}.wxml-->
+<camera device-position="back" flash="off" binderror="error" style="width: 750rpx; height: 524rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></camera>
+<button type="primary" bindtap="takePhoto">拍照解析</button>
+<image mode="aspectFill" src="{{imgResole}}" style="width: 750rpx; height: 480rpx; display: inline-block; box-sizing: border-box; left: NaNrpx; top: NaNrpx "></image>
+
+<button type="primary" bindtap="getPrePhoto">点击获取解析结果</button>
+<text style="position: relative; left: 23rpx; top: -1138rpx" class="img_txt">佩戴口罩人数：{{mask}}</text>
+<text style="position: relative; left: -221rpx; top: -1062rpx" class="img_txt">未佩戴口罩人数： {{nomask}}</text>
+<button type="warn"  style="position: relative; left: 0rpx; top: 16rpx; width: 256rpx; height: 80rpx; display: block; box-sizing: border-box" bindtap="exitXunJian">退出巡检</button>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,165 @@
+/* {{page}}.wxss */
+page{/*页面背景—————统一浅灰*/
+  background-color: #ededed;
+}
+.userInformation {/*头像&微信名称*/
+  display: flex;
+  background-color: #ffffff;
+}
+.userInfomation-avatar {/*头像*/ 
+  background-color: #ffffff;
+  margin: 0 auto;  
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 20rpx;
+  margin-top: 30rpx;
+  margin-left: 40rpx;
+  border-color: #ffffff;
+}
+
+.userInformation-nickname {/*昵称*/
+  color: #000000;
+  font-size: 22px;
+  font-weight: bold;
+  width: 320rpx;
+  height: 120px;
+  line-height: 120px;
+}
+
+.whitedivide {/*白色分割线*/
+  height: 1px;
+  background-color: #ffffff;
+  width: 56px;
+  position:relative;
+  top: 0px;
+}
+
+.graydivide {/*灰色分割条*/
+  height: 10px;
+  background-color: #ededed;
+  position:relative;
+  top: 0px;
+}
+
+.function {
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 0rpx;
+  overflow: hidden;
+  display: flex;/**/
+}
+
+.functioninformation {/*左边动作图标&文字说明*/
+  display: flex;
+}
+
+.left-icon {
+  display: flex;
+  margin: 14px;
+}
+
+.icon-picture {/*图标*/
+  display: flex;
+  width: 28px;
+  height: 28px;
+}
+
+.text {/*文字*/
+  font-size: 17px;
+  font-style: normal;
+  font-weight: normal;
+  width: 90px;
+  position: relative;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000000;
+}
+
+.right-icon {/*右边图片*/
+  display: flex;
+  margin: 14px;
+  position: absolute;
+  right: 14px;
+}
+
+/* 弹出窗 */
+.toast-box {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+.toastbg {
+  opacity: 0.5;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+ 
+.showToast {
+  position: absolute;
+  opacity: 1;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 70%;
+}
+.toast-main {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: white;
+  text-align: center;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+}
+ 
+.toast-input {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top:10%;
+  margin-bottom:10%;
+  background-color: rgb(240, 240, 240);
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.toast-input input{
+  background-color: rgb(240, 240, 240);
+}
+.toast-button {
+  display: flex;
+  background-color: white;
+  height:50px;
+  width:100%;
+  border-radius: 0px;
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+  border-top:1px solid rgb(211, 211, 211);
+}
+ 
+.button1 {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px;
+  border-bottom-left-radius: 16rpx;
+}
+ 
+.button2 {
+  width: 50%;
+  border-left:1px solid rgb(211, 211, 211);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#40A4D6;
+}
+

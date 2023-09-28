@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis配置文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyongqiang.zyz.mapper.UserMapper">
+
+    <select id="searchUserInfoByName" resultType="com.heyongqiang.zyz.po.User">
+        select id ,user_name , password , login_time , md5_key, status , role_id from weixing_user
+        where user_name = #{userName}
+    </select>
+
+    <update id="updateLoginStatus">
+        update weixing_user set login_time = #{loginTime} , status = 'L'
+        where id = #{id}
+    </update>
+
+    <select id="selectUserStatusByUserName" resultType="java.lang.String">
+        select status from weixing_user
+        where user_name = #{userName}
+    </select>
+
+    <select id="verifyUserInfo" resultType="java.lang.Integer">
+        select count(*) from weixing_user
+        where user_name = #{userName}
+        and password = #{password}
+    </select>
+
+    <update id="updateLogoutStatus">
+        update weixing_user set logout_time = #{data} , status = 'U'from weixing_user
+        where id = #{id}
+    </update>
+
+</mapper>

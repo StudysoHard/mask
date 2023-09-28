@@ -1,0 +1,75 @@
+/* {{component}}.wxss */
+.wx-popup {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+}
+.popup-container {
+  position: fixed;
+  left: 10%;
+  top: 20%;
+  width: 80%;
+  max-width: 600rpx;
+  border-radius: 20rpx;
+  box-sizing: bordre-box;
+  background: #fff;
+  z-index: 2000;
+}
+.wx-popup-title {
+  width: 100%;
+  padding: 28rpx;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+  border-bottom: 5rpx solid #9EA3BA;
+  box-sizing: border-box;
+}
+.wx-popup-con {
+  margin: 50rpx 10rpx;
+  text-align: center;
+  padding: 0 86rpx;
+}
+.wx-popup-con text {
+  padding-bottom: 10rpx;
+}
+.content_money {
+  color: #FFB258;
+}
+.wx-popup-btn {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40rpx;
+}
+.wx-popup-btn text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 88rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 88rpx;
+}
+.wx-popup-btn .closeBtn {
+  position: fixed;
+  left: 45%;
+  bottom: 30%;
+}
+.wx-popup-btn .close-popup {
+  position: relative;
+  height: 80rpx;
+  width: 80rpx;
+  border: 5rpx solid #fff;
+  border-radius: 50%;
+}
+ .wx-popup-btn .close-popup view {
+   position: absolute;
+   left: 30%;
+   top: 8%;
+   font-size: 50rpx;
+   color: #fff;
+ }

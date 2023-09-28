@@ -1,0 +1,7 @@
+<!--{{page}}.wxml-->
+<input name="url" value="{{url}}" bindinput ="urlInput"/>
+<button size='mini' type="warn">断开连接</button>
+<button size='mini' type="primary" bindtap="connectSocket">开启连接</button>
+<textarea placeholder="输入发送内容" bindinput ="msgInput"></textarea>
+<button size='mini' type="primary" bindtap="sendMsg">发送</button>
+<view wx:for="{{msgs}}">{{index}}: {{item}}</view>

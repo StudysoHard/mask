@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/map/index",
+    "pages/camera/index",
+    "pages/fine/index",
+    "pages/mini/index",
+    "pages/xunjian/index",
+    "pages/historyImg/index",
+    "pages/onLineChat/index",
+    "pages/login/index"
+  ],
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
+  "subpackages": [
+    {
+      "root": "template",
+      "name": "ucharts",
+      "pages": [
+        "ucharts/index",
+        "requestList/index"
+      ],
+      "independent": false
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFCC",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/map/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_selected.png",
+        "text": "地图"
+      },
+      {
+        "pagePath": "pages/camera/index",
+        "iconPath": "images/camera.png",
+        "selectedIconPath": "images/camera_selected.png",
+        "text": "巡检"
+      },
+      {
+        "pagePath": "pages/mini/index",
+        "iconPath": "images/mini.png",
+        "selectedIconPath": "images/mini_selected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "plugins": {
+    "tfjsPlugin": {
+      "version": "0.1.0",
+      "provider": "wx6afed118d9e81df9"
+    }
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}

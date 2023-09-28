@@ -1,0 +1,47 @@
+<view class="container-fill">
+<view class="scroll-fullpage" bindtouchstart="scrollTouchstart" bindtouchmove="scrollTouchmove" bindtouchend="scrollTouchend" style="transform: translateY(-{{scrollindex * 100}}%); margin-top: {{margintop}}px;">
+
+		<view class="section section01 {{scrollindex==0?'active':''}}" style="background: #3399FF;">
+			<text class="section-maintitle">摄像头识别的人数</text>
+          <view class="charts-box">
+        <qiun-wx-ucharts 
+          type="column"
+          opts="{{opts_column}}"
+          chartData="{{chartData_column}}"
+        />
+          </view>
+		</view>
+		<view class="section section02 {{scrollindex==1?'active':''}}" style="background: #00CC66;">
+			<text class="section-maintitle">巡检识别的人数</text>
+				<view class="charts-box">
+					<qiun-wx-ucharts 
+						type="mount"
+						opts="{{opts_mount}}"
+						chartData="{{chartData_mount}}"
+					/>
+				</view>
+
+		</view>
+		<view class="section section03 {{scrollindex==2?'active':''}}" style="background: #33CCCC;">
+			<text class="section-maintitle">识别人数排行</text>
+			
+				<view class="charts-box">
+					<qiun-wx-ucharts 
+						type="rose"
+						opts="{{opts_rose}}"
+						chartData="{{chartData_rose}}"
+					/>
+				</view>
+
+		</view>
+		<view class="section section04 {{scrollindex==3?'active':''}}" style="background: #9966FF;">
+			<text class="section-maintitle">词云</text>
+		
+			<view class="charts-box">
+				<qiun-wx-ucharts type="word" opts="{{opts_word}}" chartData="{{chartData_word}}" />
+			</view>
+		
+			<button type="primary" style="position: relative; left: 0rpx; top: 90rpx; width: 253rpx; height: 80rpx; display: block; box-sizing: border-box" bindtap="returnMap">返回主页</button>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyongqiang.zyz.mapper.UserCameraMapper">
+
+    <resultMap id="BaseResultMap" type="com.heyongqiang.zyz.po.UserCamera">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="cameraId" column="camera_id" jdbcType="BIGINT"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="addTime" column="add_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,cameraId,userId,
+        created,addTime
+    </sql>
+
+
+    <select id="selectCameraListsByUserId" resultType="long">
+        select  camera_id from weixing_user_camera
+        where user_id = #{userId}
+    </select>
+
+</mapper>

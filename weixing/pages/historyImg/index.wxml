@@ -1,0 +1,18 @@
+<!--{{page}}.wxml-->
+<view class="container">
+  <view class="header">图片展示</view>
+  <button bindtap="retrunHome">返回</button>
+  <view class="image-list">
+    <block wx:for="{{imageList}}" wx:key="url">
+      <view class="image-item">
+        <view class="image-index">{{index+1}}</view> <!-- 添加图片索引 -->
+        <view class="imgage-time">{{item.times}}</view> <!-- 添加图片索引 -->
+        <image src="{{item.imgPath}}" mode="aspectFit" />
+      </view>
+    </block>
+  </view>
+  <button type="primary" style="position: relative; left: 0rpx; top: 90rpx; width: 253rpx; height: 80rpx; display: block; box-sizing: border-box" bindtap="returnMap">返回主页</button>
+</view>
+
+
+

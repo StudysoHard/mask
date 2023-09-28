@@ -1,0 +1,186 @@
+<!--{{page}}.wxml-->
+
+<!--用户头像和昵称-->
+<view class="userInformation" bindtap="logout">
+  <view class="userInfomation-avatar">
+    <open-data type="userAvatarUrl" ></open-data>
+  </view>
+  <view class="userInformation-nickname">
+    <open-data type="userNickName"></open-data>
+  </view>
+</view>
+<!--间隔灰横条-->
+<view class="graydivide"></view>
+<!--在线沟通-->
+<view class='function' bindtap="onLineChat">
+  <view style="width:100%">
+    <view class="functioninformation"><!--左边图片&文字-->
+      <view class="left-icon"><!--图片-->
+        <image class="icon-picture" src="/images/pay.png"></image>
+      </view>
+      <view class="text">在线沟通</view><!--文字-->
+      <view class="right-icon"><!--图片-->
+        <image class="icon-picture" src="/images/left.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!--间隔灰横条-->
+<view class="graydivide"></view>
+<!--权限升级-->
+<view class='function'>
+  <view style="width:100%">
+    <view class="functioninformation"><!--左边图片&文字-->
+      <view class="left-icon"><!--图片-->
+        <image class="icon-picture" src="/images/collect.png"></image>
+      </view>
+      <view class="text" bindtap="toClock">权限升级</view><!--文字-->
+      <view class="right-icon"><!--图片-->
+        <image class="icon-picture" src="/images/left.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!--间隔白横线-->
+<view class="whitedivide"></view>
+<!--摄像头申请-->
+<view class='function'>
+  <view style="width:100%">
+    <view class="functioninformation"><!--左边图片&文字-->
+      <view class="left-icon"><!--图片-->
+        <image class="icon-picture" src="/images/images.png"></image>
+      </view>
+      <picker class="text" bindchange="bindPickerChange" value="{{cameraIndex}}" range="{{cameraList}}">
+          摄像头申请
+      </picker>
+      <view class="right-icon"><!--图片-->
+        <image class="icon-picture" src="/images/left.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!--间隔白横线-->
+<view class="whitedivide"></view>
+<!--摄像头接入-->
+<view class='function'>
+  <view style="width:100%">
+    <view class="functioninformation"><!--左边图片&文字-->
+      <view class="left-icon"><!--图片-->
+        <image class="icon-picture" src="/images/package.png"></image>
+      </view>
+      <view class="text" bindtap="close_stream">摄像头接入</view><!--文字-->
+      <view class="right-icon"><!--图片-->
+        <image class="icon-picture" src="/images/left.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!--间隔白横线-->
+<view class="whitedivide"></view>
+<!--表情-->
+<view class='function'>
+  <view style="width:100%">
+    <view class="functioninformation"><!--左边图片&文字-->
+      <view class="left-icon"><!--图片-->
+        <image class="icon-picture" src="/images/smail.png"></image>
+      </view>
+      <view class="text" bindtap="refList">历史申请</view><!--文字-->
+      <view class="right-icon"><!--图片-->
+        <image class="icon-picture" src="/images/left.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!--间隔灰横条-->
+<view class="graydivide"></view>
+<!--修改信息-->
+<view class='function'>
+  <view style="width:100%">
+    <view class="functioninformation"><!--左边图片&文字-->
+      <view class="left-icon"><!--图片-->
+        <image class="icon-picture" src="/images/shezhi.png"></image>
+      </view>
+      <view class="text" bindtap="close_info">修改信息</view><!--文字-->
+      <view class="right-icon"><!--图片-->
+        <image class="icon-picture" src="/images/left.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<modal hidden="{{hiddenmodalput}}" title="是否要申请权限升级" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+     <input type='text'  value="{{num}}"      bindinput='input'  auto-focus/>
+ </modal>
+
+
+<block wx:if="{{isShowConfirm}}">
+      <view class='toast-box'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-main'>
+                <view class='toast-input'>
+                    <input type='text'  bindinput='setValue' placeholder="请输入要申请的摄像头id" data-name='stuEidtName'></input>
+                </view>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <view catchtap='cancels'>取消</view>
+                </view> 
+                 <view class='button2'>
+                    <view  catchtap='confirmAcceptance'>确定</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+
+
+<block wx:if="{{isShowConfirm_stream}}">
+      <view class='toast-box'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-main'>
+                <view class='toast-input'>
+                    <input type='text'  bindinput='streamLongitude' placeholder="请输入摄像头经度" data-name='stuEidtName'></input>
+                    <input type='text'  bindinput='streamLatitude' placeholder="请输入摄像头经度" data-name='stuEidtName'></input>
+                    <input type='text'  bindinput='streamUrl' placeholder="请输入摄像头流地址" data-name='stuEidtName'></input>
+                </view>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <view catchtap='cancels_stream'>取消</view>
+                </view> 
+                 <view class='button2'>
+                    <view  catchtap='confirmAcceptance_stream'>确定</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+
+
+<block wx:if="{{isShowConfirm_info}}">
+      <view class='toast-box'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-main'>
+                <view class='toast-input'>
+                    <input type='text'  bindinput='newName' placeholder="请输入新用户名" data-name='stuEidtName'></input>
+                    <input type='text'  bindinput='originalPassword' placeholder="请输入旧密码" data-name='stuEidtName'></input>
+                    <input type='text'  bindinput='newPassword' placeholder="请输入新密码" data-name='stuEidtName'></input>
+                    <input type='text'  bindinput='newTelephone' placeholder="请输入新电话号码" data-name='stuEidtName'></input>
+                </view>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <view catchtap='cancels_info'>取消</view>
+                </view> 
+                 <view class='button2'>
+                    <view  catchtap='confirmAcceptance_info'>确定</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+

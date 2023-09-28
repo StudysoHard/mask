@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "qiun-wx-ucharts": "../../miniprogram_npm/@qiun/wx-ucharts"
+  }
+}

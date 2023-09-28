@@ -1,0 +1,12 @@
+<!--{{component}}.wxml-->
+<view class="wx-popup" style="margin:-{{windowHeight/2}}px 0 0 -{{windowWidth/2}}px" hidden="{{flag}}">
+  <view class='popup-container'>
+    <view class="wx-popup-title">{{title}}</view>
+    流地址： <view class="wx-popup-stream">{{streamUrl}}</view>
+    经度： <view class="wx-popup-code">{{longitude}}</view>
+    纬度：  <view class="wx-popup-code">{{latitude}}</view>
+    创建用户id: <view class="wx-popup-code">{{srcUser}}</view>
+    <button bindtap="_close">关闭</button>
+    <button bindtap="getverifyCode">获取验证码</button>
+  </view>
+</view>

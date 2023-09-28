@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyongqiang.zyz.mapper.CameraMapper">
+
+    <resultMap id="BaseResultMap" type="com.heyongqiang.zyz.po.Camera">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="longitude" column="longitude" jdbcType="VARCHAR"/>
+            <result property="latitude" column="latitude" jdbcType="VARCHAR"/>
+            <result property="srcUser" column="src_user" jdbcType="VARCHAR"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="isDelete" jdbcType="INTEGER"/>
+            <result property="isRequest" column="is_request" jdbcType="INTEGER"/>
+
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,longitude,latitude,
+        srcUser,createTime,isDelete,is_request
+    </sql>
+
+    <select id="searchWatchUserListByCameraId" resultType="java.lang.Long">
+        select src_user from weixing_camera
+        where id = #{cameraId}
+        and is_request != 0
+    </select>
+
+    <select id="selectCameraLocation" resultType="com.heyongqiang.zyz.common.dto.CameraLocationDto">
+        select id , longitude , latitude
+        from weixing_camera
+        where is_request != 0
+    </select>
+
+    <select id="selectCreateUser" resultType="java.lang.Long">
+        select id
+        from weixing_camera
+        where src_user = #{id}
+        and is_request != 0
+    </select>
+
+    <select id="getCreateUserCounts" resultType="java.lang.Integer">
+        select count(*)
+        from weixing_camera
+        where src_user = #{id}
+        and is_request = 1
+    </select>
+</mapper>

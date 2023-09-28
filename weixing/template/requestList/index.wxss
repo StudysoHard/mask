@@ -1,0 +1,26 @@
+/* template/requestList/index.wxss */
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text-shrink {
+  font-size: 16px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+.text-all {
+  font-size: 16px;
+  text-align: center;
+}
+.view-column{
+  width:25%;display:inline-block;
+}
+.view-column-all{
+  min-width:25%;display:inline-block;
+}

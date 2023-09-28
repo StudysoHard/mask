@@ -1,0 +1,17 @@
+<!--template/requestList/index.wxml-->
+<view class="container">
+  <view class="view-row" style="color:#aaa;font-size:36rpx;margin:30rpx;border-bottom:1rpx solid #aaa;padding:10rpx">用户申请</view>
+  <scroll-view scroll-x style="width:90%;white-space: nowrap;margin-top:20px;">
+    <block wx:for="{{contentList}}">
+      <view class="{{isShowAll?'view-column-all':'view-column'}}">
+        <block wx:for="{{item}}" wx:for-index="subIndex" wx:for-item="subItem">
+        <view style="width:100%;background:{{subIndex%2==0?'rgb(206, 236, 255)':'white'}};padding:10px 0;border:1px solid white" bindtap="showAll">
+          <text class="{{isShowAll?'text-all':'text-shrink'}}" style="width:100%">{{subItem}}</text>
+        </view>
+        </block>
+      </view>
+    </block>
+  </scroll-view>
+  <button type="primary" style="position: relative; left: 0rpx; top: 90rpx; width: 253rpx; height: 80rpx; display: block; box-sizing: border-box" bindtap="returnMap">返回主页</button>
+</view>
+

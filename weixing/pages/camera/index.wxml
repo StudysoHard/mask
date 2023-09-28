@@ -1,0 +1,43 @@
+<!--{{page}}.wxml-->
+
+<!--间隔灰横条-->
+<view class="graydivide"></view>
+<!--支付-->
+<view class='function'>
+  <view style="width:100%">
+    <view class="functioninformation"><!--左边图片&文字-->
+      <view class="left-icon"><!--图片-->
+        <image class="icon-picture" src="/images/pay.png"></image>
+      </view>
+    </view>
+    </view>
+     <!-- 居民通知 -->
+    <view class="page-section">
+      <swiper  class="swiper-notice" vertical="{{msgSet.vertical}}" autoplay="{{msgSet.autoplay}}" circular="{{msgSet.circular}}" interval="{{msgSet.interval}}" style="top: 120rpx">
+        <block wx:for="{{msgList}}" wx:key="{{item.id}}">
+          <swiper-item bindtap="toMsgDetail" data-id="{{item.id}}">
+            <view class="swiper-item" data-id="{{item.id}}" style="width: 100%rpx; height: 90rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">{{item.title}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    </view>
+<!--间隔灰横条-->
+<view class="graydivide"></view>
+
+<button type="primary" bindtap="beginXunjian" style="position: relative; left: 0rpx; top: 310rpx" class="button-xunjian">开始巡检</button>
+<button type="primary" style="position: relative; left: -198rpx; top: 526rpx; width: 334rpx; height: 94rpx; display: block; box-sizing: border-box" bindtap="historyImg">历史识别图片</button>
+<button type="primary" style="position: relative; left: 167rpx; top: 432rpx; width: 334rpx; height: 94rpx; display: block; box-sizing: border-box" bindtap="redirectCharts">分析人员轨迹</button>
+
+
+
+
+
+              
+            
+
+
+              
+            
+

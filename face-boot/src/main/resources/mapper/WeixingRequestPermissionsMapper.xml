@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyongqiang.zyz.mapper.WeixingRequestPermissionsMapper">
+
+    <resultMap id="BaseResultMap" type="com.heyongqiang.zyz.po.WeixingRequestPermissions">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="requestTime" column="request_time" jdbcType="DATE"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="floor" column="floor" jdbcType="INTEGER"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="throse" column="throse" jdbcType="INTEGER"/>
+            <result property="requestType" column="request_type" jdbcType="INTEGER"/>
+            <result property="throseContent" column="throse_content" jdbcType="VARCHAR"/>
+
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,request_time,
+        floor,permissions_id,status,
+        user_id,throse,request_type,throse_content
+    </sql>
+</mapper>
