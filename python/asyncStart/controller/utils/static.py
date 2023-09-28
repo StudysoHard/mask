@@ -1,0 +1,4 @@
+
+streamUrl = ''
+
+cameraId = 0
